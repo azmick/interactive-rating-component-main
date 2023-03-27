@@ -1,0 +1,250 @@
+/*Fontlar*/
+
+@font-face {
+    font-family: Overpass;
+    font-style: normal;
+    font-weight: 700;
+    src: local("Overpass Bold"), local("Overpass-Bold"), url(./fonts/Overpass-Bold.ttf) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+2122, U+2212, U+2215;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Overpass;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Overpass Regular"), local("Overpass-Bold"), url(./fonts/Overpass-Regular.ttf) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+2122, U+2212, U+2215;
+    font-display: swap;
+}
+
+/*Değerler*/
+
+:root{
+    --clr-orange: hsl(25, 97%, 53%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-light-grey: hsl(217, 12%, 63%);
+    --clr-grey: hsl(216, 12%, 54%);
+    --clr-blue: hsl(213, 19%, 18%);
+    --clr-dark-blue: hsl(216, 12%, 8%);
+    --clr-gradient: linear-gradient(to bottom, hsl(215,20%,17%),hsl(215, 24%, 12%));
+}
+
+/*Reset*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+body,
+h1,
+p {
+  margin: unset;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  display: grid;
+  place-items: center;
+  min-block-size: 100vh;
+  background-color: var(--clr-dark-blue);
+  font: clamp(14px, 3vw, 15px)/1.6 Overpass, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*Sınıflar*/
+
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.text.center {
+  text-align: center;
+}
+
+
+
+/*Tipografi*/
+h1 {
+    color: var(--clr-white);
+    font-size: clamp(24px, 5vw, 28px);
+    line-height: 1.2;
+    margin-bottom: 0.4375rem;
+}
+
+p {
+    color: var(--clr-light-grey);
+}
+
+/*Layout*/
+main {
+ background-image: var(--clr-gradient);
+ max-width: 25.75rem;
+ width: 100%;
+ border-radius: 1.875rem;
+ padding: clamp(1.5rem, 5vw, 2rem);
+ width: calc(100% - 2rem);
+}
+
+.logo {
+  --size:48px;
+    background-color: var(--clr-blue);
+    width: var(--size);
+    height: var(--size);
+    padding: 1rem;
+    border-radius: var(--size);
+    margin-bottom: 1.875rem;
+}
+
+/* Form Elements */
+.button {
+  --size:45px;
+
+  background-color: var(--clr-orange);
+  border:unset;
+  color:var(--clr-white);
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  height: var(--size);
+  border-radius:var(--size);
+  width:100%;
+  cursor: pointer;
+  appearance:none;
+  transition: background-color 0.15s linear, color 0.15s linear;
+  outline: none;
+}
+
+.button:is(:hover,:focus-visible){
+  background-color:var(--clr-white);
+  color:var(--clr-orange);
+}
+
+.rating-group {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 1.5rem 2rem;
+}
+
+.radio-input .control {
+  --size: clamp(2.625rem, 13vw, 3.1875rem);
+  display: block;
+  background-color: var(--clr-blue);
+  color: var(--clr-grey);
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--size);
+  text-align: center;
+  line-height: var(--size);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background-color 0.15s linear, color 0.15s linear;
+}
+
+.radio-input input:checked + .control{
+ background-color: var(--clr-grey);
+ color: var(--clr-white);
+}
+
+.radio-input:hover .control,
+.radio-input input:focus + .control{
+  background-color: var(--clr-orange);
+  color: var(--clr-white);
+}
+
+/*Değerlendirme Sonucu*/
+
+.rating-result {
+  --size:2rem;
+
+  background-color: var(--clr-blue);
+  color: orange;
+  height: var(--size);
+  border-radius: var(--size);
+  line-height: var(--size);
+  width: max-content;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  margin-block: 2rem;
+}
+
+.illustration {
+  margin-inline: auto;
+}
+
+/*Keyframeler*/
+
+.animate-out{
+  animation: animate-out 1s linear both;
+}
+
+.animate-in{
+  animation: animate-in 1s linear both;
+}
+
+@keyframes animate-out{
+  
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    translate: -3rem;
+  }
+}
+
+@keyframes animate-in{
+  
+  from {
+    opacity: 0;
+    translate: 3rem;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0rem;
+  }
+}

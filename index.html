@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+
+
+  <title>Frontend Mentor | Interactive rating component</title>
+</head>
+<body>
+
+  <main>
+    <div data-js-wrapper>
+    <img src="./images/icon-star.svg" alt="" width="16" height="16" class="logo"/>
+  
+  <h1>Masaj Hizmetimizi Beğendiniz Mi ?</h1>
+
+  <p>
+    Kocanızın yapmış olduğu size özel tüm vücut masajı nasıl buldunuz.
+    Değerlendirmeniz bizim için çok kıymetli. Teşekkürler.
+  </p>
+    
+  <form data-js-form>
+    <div class="rating-group">
+    <label class="radio-input">
+      <input type="radio" name="rating" value="1" class="sr-only" />
+      <span class="control">1<span class="sr-only">star</span></span>
+    </label>
+    <label class="radio-input">
+      <input type="radio" name="rating" value="2" class="sr-only" />
+      <span class="control">2<span class="sr-only">stars</span></span>
+    </label>
+    <label class="radio-input">
+      <input type="radio" name="rating" value="3" class="sr-only" />
+      <span class="control">3<span class="sr-only">stars</span></span>
+    </label>
+    <label class="radio-input">
+      <input type="radio" name="rating" value="4" class="sr-only" />
+      <span class="control">4<span class="sr-only">stars</span></span>
+    </label>
+    <label class="radio-input">
+      <input type="radio" name="rating" value="5" class="sr-only" />
+      <span class="control">5<span class="sr-only">stars</span></span>
+    </label>
+    </div>
+    <button type="submit" class="button">Submit</button>
+  </form>
+  </div>
+  </main>
+
+  <template data-js-template>
+    <img src="./images/illustration-thank-you.svg" alt="" width="162" height="108" class="illustration"/>
+    <p class="rating-result">5 Yıldız üzerinden {{ rating }} yıldız verdiniz!</p>
+
+    <h1 class="text-center">Teşekkürler!</h1>
+  
+    <p class="text-center">
+      Yapmış olduğunuz değerlendirmeden dolayı çok teşekkür ederiz.
+      Kendimizi her geçen gün sizin konforunuz için geliştirmekteyiz.
+      Takipte, sevgiyle kalın.
+    </p>
+  </template>
+ 
+
+  <script src="./script.js"></script>
+
+  
+</body>
+</html>
